@@ -3,8 +3,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # read image
-source_img = cv2.imread('source.jpg', cv2.CV_8UC1)
-source_img1 = cv2.imread('source.jpg')
+source_img = cv2.imread('images/source.jpg', cv2.CV_8UC1)
+source_img1 = cv2.imread('images/source.jpg')
 print(source_img1.shape)
 
 # denoising
@@ -54,7 +54,6 @@ processed_img, contours, hierarchy = cv2.findContours(dilate_img, cv2.RETR_EXTER
 area, num = 0, 0
 for i in range(len(contours)):
     temp = cv2.contourArea(contours[i])
-    print("the area of block " + str(i) + " is: " + str(temp))
     if 100 < temp:
         num += 1
         area += temp
