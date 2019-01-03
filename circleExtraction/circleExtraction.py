@@ -3,8 +3,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # read image
-source_img = cv2.imread('images/source.jpg', cv2.CV_8UC1)
-source_img1 = cv2.imread('images/source.jpg')
+source_img = cv2.imread('images/source/source4.jpg', cv2.CV_8UC1)
+source_img1 = cv2.imread('images/source/source4.jpg')
 print(source_img1.shape)
 
 # denoising
@@ -16,7 +16,7 @@ plt.figure("hist")
 plt.plot(hist)
 
 # extract the white block(circle and ellipse) through binary processing
-ret, thresh_img = cv2.threshold(denoised_img, 46, 255, cv2.THRESH_BINARY)
+ret, thresh_img = cv2.threshold(denoised_img, 50, 255, cv2.THRESH_BINARY)
 plt.figure("white blocks")
 plt.imshow(thresh_img)
 
